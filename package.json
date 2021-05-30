@@ -1,0 +1,22 @@
+{
+  "name": "word-counter",
+  "version": "1.0.0",
+  "description": "Counts words from a given string.",
+  "main": "counter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Connerjm/Word-Counter.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Conner Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Connerjm/Word-Counter/issues"
+  },
+  "homepage": "https://github.com/Connerjm/Word-Counter#readme"
+}
