@@ -1,11 +1,3 @@
-//Imports.
-const { table } = require("table");
-
-//Testing strings.
-const shortString = "This is just a basic, short string for counting words.";
-const averageString = "At the end of the day, you are solely responsible for your success and your failure. And the sooner you realize that, you accept that, and integrate that into your work ethic, you will start being successful. As long as you blame others for the reason you aren't where you want to be, you will always be a failure.";
-const repeatedWords = "Word word word word Word WORD wORD word word WoRd word word lots of words.";
-
 //Counter function. Takes the string to parse and returns a map with the words and count for each.
 function counter(str)
 {
@@ -13,7 +5,7 @@ function counter(str)
     const wordMap = new Map();
 
     //For each word in the given string.
-    str.toLowerCase().replace(/[,\.]/g, "").split(" ").forEach(word =>
+    str.toLowerCase().replace(/[,"'!?\.]/g, "").split(" ").forEach(word =>
     {
         //If the word is already in the map, increase it.
         if(wordMap.has(word))
@@ -24,11 +16,13 @@ function counter(str)
     });
 
     //Return the map converted to a 2d array.
-    return convert(wordMap);
+    return wordMap;
 }
 
-//Function to take the map and turn it into a 2d array.
-function convert(map)
+/* Helper methods. */
+
+//Converts the map to a 2d array.
+function to2DArray(map)
 {
     //Empty array.
     const array = [];
@@ -43,5 +37,4 @@ function convert(map)
     return array;
 }
 
-//Testing.
-console.log(table(counter(averageString)));
+module.exports = { counter, to2DArray };
